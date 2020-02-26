@@ -10,18 +10,17 @@ public class BrowserFactory {
 
 	static WebDriver driver;
 
-	public static WebDriver startBrowser() {
-//
-//		if (browser.equalsIgnoreCase("chrome")) {
-//
-//			System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
-//			driver = new ChromeDriver();
-//
-//          else if (browser.equalsIgnoreCase("firefox")) {
+	public static WebDriver startBrowser(String browser) {
+
+		if (browser.equalsIgnoreCase("chrome")) {
+
+			System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+			driver = new ChromeDriver();
+		} else if (browser.equalsIgnoreCase("firefox")) {
 
 			System.setProperty("webdriver.gecko.driver", "./drive1/geckodriver.exe");
 			driver = new FirefoxDriver();
-//		}
+		}
 
 		driver.get("http://techfios.com/test/billing/?ng=admin/");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

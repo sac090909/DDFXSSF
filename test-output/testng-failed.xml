@@ -5,6 +5,7 @@
     <classes>
       <class name="test.LoginTest">
         <methods>
+          <include name="initialization"/>
           <include name="validUserShouldBeAbleToLogin"/>
         </methods>
       </class> <!-- test.LoginTest -->
