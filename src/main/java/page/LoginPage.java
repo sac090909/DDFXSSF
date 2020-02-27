@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class LoginPage {
+public class LoginPage extends BasePage{
 
 	WebDriver driver;
 	
@@ -21,7 +21,7 @@ public class LoginPage {
 	@FindBy(how = How.NAME, using = "login")
 	WebElement SignInButton;
 
-	public String getLoginPageTitile() {
+	public String getLoginPageTitle() {
 		return driver.getTitle();
 
 	}
@@ -33,5 +33,11 @@ public class LoginPage {
 		SignInButton.click();
 	
 	}
+//
+//	public void getDashboardPageHeaderTitleElement() {
+//		waitForElement(driver, 10, )
+//	}
+//
+	
 
 }

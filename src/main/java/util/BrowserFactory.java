@@ -8,9 +8,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory {
 
-	static WebDriver driver;
-
-	public static WebDriver startBrowser(String browser) {
+	WebDriver driver;
+    
+	public WebDriver startBrowser(String browser) {
 
 		if (browser.equalsIgnoreCase("chrome")) {
 
