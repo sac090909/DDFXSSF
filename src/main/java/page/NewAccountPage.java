@@ -47,21 +47,13 @@ public class NewAccountPage extends BasePage {
 		return driver.getTitle();
 	}
 
-	public void setAccountTitle(String accountName) {
+	public void fillAccountInformationForm(String accountName, String descriptions, String initialBalances) {
 		accountTitle.sendKeys(accountName);
-	}
-
-	public void setDescription(String descriptions) {
 		description.sendKeys(descriptions);
-	}
-
-	public void setInitialBalance(String initialBalances) {
 		initialBalance.sendKeys(initialBalances);
-	}
-
-	public void clickSubmitButton() {
 		submitButton.click();
 	}
+
 
 	public WebElement displayAcccountCreateSuccessMessageActual() {
 		return acccountCreateSuccessMessage;

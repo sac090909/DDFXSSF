@@ -1,3 +1,4 @@
+
 package test;
 
 import java.util.Random;
@@ -46,6 +47,7 @@ public class NewAccountTest {
 		DashBoardPage dashboardPage = PageFactory.initElements(driver, DashBoardPage.class);
 		dashboardPage.waitForDashboardPage();
 		dashboardPage.goToNewAccountPage();
+
 		Thread.sleep(1000);
 
 		NewAccountPage newAccountPage = PageFactory.initElements(driver, NewAccountPage.class);
@@ -53,16 +55,9 @@ public class NewAccountTest {
 		String actualTitleNewAccountPage = newAccountPage.getNewAccountPageTitle();
 		Assert.assertEquals(actualTitleNewAccountPage, expectedTitleNewAccountPage, "New Account Page M!Smatched ..");
 
-		Thread.sleep(1000);
-		newAccountPage.setAccountTitle(rndAccountNameExpected);
-		Thread.sleep(1000);
-		newAccountPage.setDescription(rndDescriptionExpected);
-		Thread.sleep(1000);
-		newAccountPage.setInitialBalance(rndInitialBalance);
-		newAccountPage.clickSubmitButton();
+		newAccountPage.fillAccountInformationForm(rndAccountNameExpected, rndDescriptionExpected, rndInitialBalance);
 		Thread.sleep(1000);
 
-		// Account create validation
 		Assert.assertTrue(newAccountPage.displayAcccountCreateSuccessMessageActual().isDisplayed(),
 				"Account Created Successfully Not Displayed !!");
 
